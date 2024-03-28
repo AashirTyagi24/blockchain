@@ -13,13 +13,14 @@ const app = express();
 const blockchain = new Blockchain();
 const transactionPool= new TransactionPool();
 const wallet= new Wallet();
-const transactionMiner = new TransactionMiner({ blockchain, transactionPool, wallet, pubsub });
 
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 const REDIS_URL='redis-11395.c264.ap-south-1-1.ec2.cloud.redislabs.com:11395';
 
 const pubsub= new PubSub({blockchain, transactionPool,redisUrl: REDIS_URL});
+const transactionMiner = new TransactionMiner({ blockchain, transactionPool, wallet, pubsub });
+
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'./frontend/dist')));
 
