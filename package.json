@@ -9,9 +9,9 @@
     "dev": "npm run dev-client & npm run start-redis && nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
     "start-redis": "redis-server --daemonize yes",
-    "build-client": "npm run clean && parcel build frontend/src/index.html --out-dir frontend/dist",
-    "dev-client": "npm run clean && parcel frontend/src/index.html --out-dir frontend/dist",
-    "clean": "rm -rf .cache frontent/dist"
+    "build-client": "npm run clean && parcel build crypto_proj/frontend/src/index.html --out-dir crypto_proj/frontend/dist",
+    "dev-client": "npm run clean && parcel crypto_proj/frontend/src/index.html --out-dir crypto_proj/frontend/dist",
+    "clean": "rm -rf .cache crypto_proj/frontent/dist"
   },
   "keywords": [],
   "author": "",

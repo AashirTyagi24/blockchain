@@ -1,12 +1,12 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const Blockchain = require('./blockchain');
-const PubSub = require('./pubsub');
+const Blockchain = require('./crypto_proj/blockchain');
+const PubSub = require('./crypto_proj/pubsub');
 const request = require('request');
-const TransactionPool = require('./transaction-pool');
-const Wallet = require('./wallet');
-const Transaction = require('./transaction');
-const TransactionMiner = require('./transaction-miner');
+const TransactionPool = require('./crypto_proj/transaction-pool');
+const Wallet = require('./crypto_proj/wallet');
+const Transaction = require('./crypto_proj/transaction');
+const TransactionMiner = require('./crypto_proj/transaction-miner');
 const path = require('path');
 
 const app = express();
@@ -15,7 +15,7 @@ const transactionPool= new TransactionPool();
 const wallet= new Wallet();
 
 const DEFAULT_PORT = 3000;
-const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
+const ROOT_NODE_ADDRESS = `https://blockchain-0wpt.onrender.com`;
 const REDIS_URL='redis-11395.c264.ap-south-1-1.ec2.cloud.redislabs.com:11395';
 
 const pubsub= new PubSub({blockchain, transactionPool,redisUrl: REDIS_URL});
