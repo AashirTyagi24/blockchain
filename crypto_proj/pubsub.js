@@ -8,12 +8,24 @@ const CHANNELS = {
 };
  
 class PubSub {
-    constructor({ blockchain,transactionPool, redisUrl }) {
+    constructor({ blockchain,transactionPool }) {
         this.blockchain = blockchain;
         this.transactionPool=transactionPool;
     
-        this.publisher = redis.createClient(redisUrl);
-        this.subscriber = redis.createClient(redisUrl);
+        this.publisher = redis.createClient({
+          password: '85ykKAm2OZe8qrCsQd6iQGKsN3rCrVZ0',
+          socket: {
+              host: 'redis-11395.c264.ap-south-1-1.ec2.cloud.redislabs.com',
+              port: 11395
+          }
+      });
+        this.subscriber = redis.createClient({
+          password: '85ykKAm2OZe8qrCsQd6iQGKsN3rCrVZ0',
+          socket: {
+              host: 'redis-11395.c264.ap-south-1-1.ec2.cloud.redislabs.com',
+              port: 11395
+          }
+      });
  
     (async () => {
       await this.publisher.connect();
