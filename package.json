@@ -1,10 +1,6 @@
 {
   "name": "blockchain",
   "version": "1.0.0",
-  "engines": {
-    "npm": "8.18.0",
-    "node": "16.16.0"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
