@@ -15,7 +15,7 @@ const transactionPool= new TransactionPool();
 const wallet= new Wallet();
 
 const DEFAULT_PORT = 3000;
-const ROOT_NODE_ADDRESS = `https://blockchain-0wpt.onrender.com`;
+const ROOT_NODE_ADDRESS = `https://aquamarine-maamoul-5df883.netlify.app`;
 const REDIS_URL='redis-11395.c264.ap-south-1-1.ec2.cloud.redislabs.com:11395';
 
 const pubsub= new PubSub({blockchain, transactionPool,redisUrl: REDIS_URL});
